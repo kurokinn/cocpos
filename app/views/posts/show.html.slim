@@ -1,0 +1,11 @@
+.IdxHdr
+  .IdxHdr__title 投稿
+  = link_to '投稿一覧', posts_path, class: 'IdxHdr__post-btn.btn.btn-outline-info'
+  = link_to '編集', edit_post_path, class: 'IdxHdr__post-btn.btn.btn-outline-info'
+.PostBox
+  .PostBox__hdr.bg-info.text-white
+    = @post.title
+  .PostBox__body
+    = simple_format(@post.content)
+  .PostBox__footer
+    = @post.name

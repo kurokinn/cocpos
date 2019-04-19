@@ -1,0 +1,10 @@
+nav.navbar.navbar-expand-lg.navbar-dark.bg-info
+  .a.navbar-brand href='#' Rabbit
+  button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"
+    .span.navbar-toggler-icon
+  .collapse.navbar-collapse
+    .navbar-nav
+      = header_link_item('Home', root_path)
+      = header_link_item('Posts', posts_path)
+      .a.nav-item.nav-link href='#' Pricing
+      .a.nav-item.nav-link.disabled href='#' Disabled
