@@ -9,3 +9,8 @@
     = simple_format(@post.content)
   .PostBox__footer
     = @post.name
+
+  .CommentForm__list
+    .CommentForm__list-title コメント
+    = render @post.comments
+= render partial: 'comments/form', locals: { comment: @comment }

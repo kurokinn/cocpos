@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_target_post, only: %i[show edit update destroy]
   def index
-    @posts = Post.all
+    @posts = Post.page(params[:page])
   end
 
   def new
@@ -11,13 +11,18 @@ class PostsController < ApplicationController
   def create
     @post = Post.create(post_params)
     if @post.save
+      flash[:notice] = "「#{post.title}」の記事が投稿されました!"
       redirect_to posts_path
     else
-      redirect_to posts_path
+      redirect_to new_post_path, flash: {
+      post: post,
+      error_messages: post.errors.full_messages
+    }
     end
   end
 
   def show
+     @comment = Comment.new(post_id: @post.id)
   end
 
   def edit

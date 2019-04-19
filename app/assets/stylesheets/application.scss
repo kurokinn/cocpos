@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require 'comment-form'
  *= require 'idx-hdr'
  *= require 'post-btn'
  += require 'post-table'

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'home#index'
+  root 'posts#index'
 
   resources :posts
+  resources :comments, only: %i[create destroy]
 end

@@ -1,0 +1,11 @@
+.CommentForm__box
+  .p.CommentForm__title コメント記入
+  = form_for comment do |f|
+    = f.hidden_field :post_id
+    .form-group
+      = f.label :name, '名前'
+      = f.text_field :name, class: 'form-control'
+    .form-group
+      = f.label :comment, 'コメント'
+      = f.text_area :comment, class: 'form-control', rows: 4
+    = f.submit '送信', class: 'btn btn-info btn-block'
